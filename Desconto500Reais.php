@@ -1,6 +1,7 @@
 <?php
 
-class Desconto500Reais {
+class Desconto500Reais implements Desconto {
+    private $proximoDesconto;
 
     public function desconto (Orcamento $Orcamento)
     {
@@ -9,6 +10,10 @@ class Desconto500Reais {
         } else {
             return 0;
         }
+    }
+
+    public function setProximo(Desconto $proximo) {
+        $this->proximoDesconto = $proximo;
     }
 
 }
