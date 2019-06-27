@@ -12,6 +12,8 @@ require 'Desconto5Itens.php';
 require 'Desconto500Reais.php';
 require 'SemDesconto.php';
 require 'Item.php';
+require 'Imposto.php';
+require 'TemplateDeImpostoCondicional.php';
 require 'CalculadoraDeImpostos.php';
 require 'CalculadoraDeDescontos.php';
 require  'ISS.php';
