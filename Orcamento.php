@@ -3,6 +3,7 @@
 class Orcamento {
   private  $valor;
   private $itens;
+  private $estado;
 
   function __construct($novoValor){
     $this->valor = $novoValor;
@@ -17,13 +18,13 @@ class Orcamento {
     $this->itens[] = $novoItem;
   }
 
-    /**
-     * @return mixed
-     */
   public function getValor()
   {
     return $this->valor;
   }
 
-
+  public function setValor($novoValor)
+  {
+    $this->valor = $novoValor;
   }
+}
