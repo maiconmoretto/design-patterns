@@ -18,6 +18,10 @@ require 'CalculadoraDeImpostos.php';
 require 'CalculadoraDeDescontos.php';
 require  'ISS.php';
 require 'ICMS.php';
+require 'Aprovado.php';
+require 'Reprovado.php';
+require 'EmAprovacao.php';
+require 'Finalizado.php';
 
 $reforma = new Orcamento(1200);
 $calculadora = new CalculadoraDeImpostos();
