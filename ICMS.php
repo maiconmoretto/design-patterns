@@ -1,28 +1,18 @@
 <?php
+class ICMS extends TemplateDeImpostoCondicional {
+	function __construct($imposto = null){
+		parent::__construct($imposto);
+	}
 
-class ICMS extends TemplateDeImpostoCondicional
-{
+	public function deveUsarOMaximo(Orcamento $orcamento){
+		return $orcamento->getValor() > 500;
+	}
 
-    public function calcula (Orcamento $orcamento) {
-        if ($orcamento->getValor() > 500) {
-            return $orcamento->getValor() * 0.15; 
-        }
-        return $orcamento->getValor() * 0.5;
-    }
+	public function taxacaoMinima(Orcamento $orcamento) {
+		return $orcamento->getValor() * 0.05;
+	}
 
-    public  function deveUsarMaximo(Orcamento $Orcamento)
-    {
-        return $Orcamento->getValor() > 500;
-    }
-
-    public  function taxacaoMaxima(Orcamento $Orcamento)
-    {
-        return $Orcamento->getValor() * 0.05;
-    }
-
-    public  function taxacaoMinima(Orcamento $Orcamento)
-    {
-        return $Orcamento->getValor() * 0.15;
-    }
-
+	public function taxacaoMaxima(Orcamento $orcamento) {
+		return $orcamento->getValor() * 0.15;
+	}
 }

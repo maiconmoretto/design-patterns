@@ -1,23 +1,18 @@
 <?php
+class ISS extends TemplateDeImpostoCondicional {
+	function __construct($imposto = null){
+		parent::__construct($imposto);
+	}
 
-class ISS extends TemplateDeImpostoCondicional
-{
-    public function calcula (Orcamento $orcamento){
-        return $orcamento->getValor() * 0.9;
-    }
+	public function deveUsarOMaximo(Orcamento $orcamento){
+		return $orcamento->getValor() > 300;
+	}
 
-    public  function deveUsarMaximo(Orcamento $Orcamento)
-    {
-        return $Orcamento->getValor() > 300;
-    }
+	public function taxacaoMinima(Orcamento $orcamento) {
+		return $orcamento->getValor() * 0.1;
+	}
 
-    public  function taxacaoMaxima(Orcamento $Orcamento)
-    {
-        return $Orcamento->getValor() * 0.01;
-    }
-
-    public  function taxacaoMinima(Orcamento $Orcamento)
-    {
-        return $Orcamento->getValor() * 0.15;
-    }
+	public function taxacaoMaxima(Orcamento $orcamento) {
+		return $orcamento->getValor() * 0.15;
+	}
 }

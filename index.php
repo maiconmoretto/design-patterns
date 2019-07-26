@@ -6,13 +6,11 @@
  * Time: 19:47
  */
 require 'Imposto.php';
-require 'Orcamento.php';
 require 'Desconto.php';
 require 'Desconto5Itens.php';
 require 'Desconto500Reais.php';
 require 'SemDesconto.php';
 require 'Item.php';
-require 'Imposto.php';
 require 'TemplateDeImpostoCondicional.php';
 require 'CalculadoraDeImpostos.php';
 require 'CalculadoraDeDescontos.php';
@@ -22,6 +20,7 @@ require 'Aprovado.php';
 require 'Reprovado.php';
 require 'EmAprovacao.php';
 require 'Finalizado.php';
+require 'Orcamento.php';
 
 $reforma = new Orcamento(1200);
 $calculadora = new CalculadoraDeImpostos();
